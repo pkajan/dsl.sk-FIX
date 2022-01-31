@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSL.SK fixer
 // @namespace    pk-ap
-// @version      1.0.2
+// @version      1.0.3
 // @description  bigger font
 // @author       PK
 // @match        http://www.dsl.sk/*
@@ -9,6 +9,8 @@
 // @match        *://*dsl.sk/*
 // @grant        GM_addStyle
 // @run-at      document-idle
+// @downloadURL https://github.com/pkajan/dsl.sk-FIX/raw/main/dslsk.user.js
+// @updateURL   https://github.com/pkajan/dsl.sk-FIX/raw/main/dslsk.user.js
 
 // ==/UserScript==
 
