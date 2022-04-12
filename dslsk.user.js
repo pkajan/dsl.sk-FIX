@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSL.SK fixer
 // @namespace    pk-ap
-// @version      1.0.4
+// @version      1.0.5
 // @description  bigger font
 // @author       PK
 // @match        http://www.dsl.sk/*
@@ -23,6 +23,14 @@ var myTxColor = "#FFFFFF";
 var myTxColor2 = "#BBDDEE";
 var myTxColorLink = "#f4a460";
 var i;
+
+if (location.protocol !== 'https:') {
+    location.replace(`https:${location.href.substring(location.protocol.length)}`);
+}
+for (i = 0; i < document.getElementsByTagName("a").length; i++) {
+    document.getElementsByTagName("a")[i].href.replace('http://','https://');
+}
+document.getElementById("header").getElementsByTagName("a")[0].href="https://www.dsl.sk/"; //logoURL
 
 /* main page */
 if (!window.location.href.match(/article.php\?/)) {
