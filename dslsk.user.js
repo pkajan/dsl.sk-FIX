@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSL.SK fixer
 // @namespace    pk-ap
-// @version      1.0.5
+// @version      1.0.6
 // @description  bigger font
 // @author       PK
 // @match        http://www.dsl.sk/*
@@ -38,6 +38,7 @@ if (!window.location.href.match(/article.php\?/)) {
     document.getElementById("news_box").style.color=myTxColor;
     document.getElementById("body").getElementsByTagName("td")[2].style.display="none"; //hide adbox
     document.getElementById("news_box").style.width="750px"; //wider news
+    document.getElementById("news_box").style.border="2px solid #FFFFFF"; //wider news
     document.getElementById("header").style.backgroundColor=myBgColor;
     document.getElementById("header").getElementsByTagName("tr")[1].style.display="none";
     document.getElementById("header").getElementsByTagName("table")[1].style.display="none";
