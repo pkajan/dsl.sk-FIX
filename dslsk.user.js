@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSL.SK fixer
 // @namespace    pk-ap
-// @version      1.0.7
+// @version      1.0.7a
 // @description  bigger font
 // @author       PK
 // @match        http://www.dsl.sk/*
@@ -42,8 +42,8 @@ if (!window.location.href.match(/article.php\?/)) {
     document.getElementById("header").style.backgroundColor=myBgColor;
     document.getElementById("header").getElementsByTagName("tr")[1].style.display="none";
     document.getElementById("header").getElementsByTagName("table")[1].style.display="none";
-    document.getElementById("header").getElementsByTagName("img")[0].style.filter="invert(1)";
-    document.getElementById("header").getElementsByTagName("img")[1].style.filter="invert(1)";
+    document.getElementById("header").getElementsByTagName("img")[0].style.filter="invert(0.83) hue-rotate(180deg)";
+    document.getElementById("header").getElementsByTagName("img")[1].style.filter="invert(0.83) hue-rotate(180deg)";
     document.getElementsByClassName("top_link")[0].style.backgroundColor=myBgColor;
     for (i = 0; i < document.getElementsByClassName("header_info_text").length; i++) {
         document.getElementsByClassName("header_info_text")[i].style.display="none";
