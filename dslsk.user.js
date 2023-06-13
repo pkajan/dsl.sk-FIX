@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSL.SK fixer
 // @namespace    pk-ap
-// @version      1.0.6
+// @version      1.0.7
 // @description  bigger font
 // @author       PK
 // @match        http://www.dsl.sk/*
@@ -47,6 +47,20 @@ if (!window.location.href.match(/article.php\?/)) {
     document.getElementsByClassName("top_link")[0].style.backgroundColor=myBgColor;
     for (i = 0; i < document.getElementsByClassName("header_info_text").length; i++) {
         document.getElementsByClassName("header_info_text")[i].style.display="none";
+    }
+    for (i = 0; i < document.getElementById("body").getElementsByTagName("a").length; i++) {
+        document.getElementById("body").getElementsByTagName("a")[i].style.textDecoration="none";
+    }
+
+    for (i = 0; i < document.getElementById("news_box").getElementsByTagName("a").length; i++) {
+        document.getElementById("news_box").getElementsByTagName("a")[i].onmouseover = function() {
+            this.style.fontWeight= "bold";
+            this.style.color= myTxColor;
+        }
+        document.getElementById("news_box").getElementsByTagName("a")[i].onmouseout = function() {
+            this.style.backgroundColor = "transparent";
+            this.style.color= myTxColor2;
+        };
     }
 
     /* font size menu */
