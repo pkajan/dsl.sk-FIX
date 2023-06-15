@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSL.SK fixer
 // @namespace    pk-ap
-// @version      1.0.8
+// @version      1.0.9
 // @description  bigger font
 // @author       PK
 // @match        http://www.dsl.sk/*
@@ -22,6 +22,7 @@ var myBgColor = "#222233";
 var myTxColor = "#FFFFFF";
 var myTxColor2 = "#BBDDEE";
 var myTxColorLink = "#f4a460";
+var myBorderColor = "1px solid #FFFFFF"
 var logoImage = "invert(0.83) hue-rotate(180deg)";
 var i;
 
@@ -116,7 +117,6 @@ if (window.location.href.match(/article.php\?/)) {
             document.getElementsByTagName("table")[13].getElementsByTagName("td")[i].style.fontSize=moarPIXELZ_discus;
         }
     }
-
 }
 
 /* whole page */
@@ -139,4 +139,30 @@ document.getElementsByTagName("table")[0].getElementsByTagName("table")[3].style
 document.getElementsByTagName("table")[0].style.margin="auto";
 document.getElementsByTagName("table")[0].style.width="50%";
 document.getElementsByTagName("table")[0].style.padding="10px";
+/*left menu*/
+for (i = 0; i < document.getElementById("menu").getElementsByTagName("div").length; i++) {
+    document.getElementById("menu").getElementsByTagName("div")[i].style.backgroundColor=myBgColor;
+    document.getElementById("menu").getElementsByTagName("div")[i].style.color=myTxColor;
+    document.getElementById("menu").getElementsByTagName("div")[i].style.border=myBorderColor;
+}
+var headersColorBG = "#e3dfd3";
+var headersColor = "#29261d";
+var menuDivs = document.getElementById("menu").getElementsByTagName("div");
+
+for (i = 0; i < menuDivs.length; i++) {
+    if (i === 0 || i === 5 || i === 8 || i === 11 || i === 14) {
+        menuDivs[i].style.background = headersColorBG;
+        menuDivs[i].style.color = headersColor;
+    }
+}
+
+for (i = 0; i < document.getElementById("menu").getElementsByClassName("menu_line").length; i++) {
+    document.getElementById("menu").getElementsByClassName("menu_line")[i].style.color=myTxColor;
+    //document.getElementById("menu").getElementsByClassName("menu_line")[i].style.border=myBorderColor;
+}
+for (i = 0; i < document.getElementById("menu").getElementsByClassName("article_menu_line").length; i++) {
+    document.getElementById("menu").getElementsByClassName("article_menu_line")[i].style.color=myTxColor;
+}
+
+
 console.log("FIX");
