@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSL.SK fixer
 // @namespace    pk-ap
-// @version      1.0.9
+// @version      1.1.0
 // @description  bigger font
 // @author       PK
 // @match        http://www.dsl.sk/*
@@ -9,9 +9,9 @@
 // @match        http://dsl.sk/*
 // @match        https://dsl.sk/*
 // @grant        GM_addStyle
-// @run-at      document-idle
-// @downloadURL https://github.com/pkajan/dsl.sk-FIX/raw/main/dslsk.user.js
-// @updateURL   https://github.com/pkajan/dsl.sk-FIX/raw/main/dslsk.user.js
+// @run-at       document-idle
+// @downloadURL  https://github.com/pkajan/dsl.sk-FIX/raw/main/dslsk.user.js
+// @updateURL    https://github.com/pkajan/dsl.sk-FIX/raw/main/dslsk.user.js
 
 // ==/UserScript==
 
@@ -163,6 +163,44 @@ for (i = 0; i < document.getElementById("menu").getElementsByClassName("menu_lin
 for (i = 0; i < document.getElementById("menu").getElementsByClassName("article_menu_line").length; i++) {
     document.getElementById("menu").getElementsByClassName("article_menu_line")[i].style.color=myTxColor;
 }
+
+const textlogodiv = document.createElement("div"); //create DIV
+const breakline = document.createElement("br"); //create BR
+const shortcut = document.createElement("a"); //create A
+const textlogospan = document.createElement("span"); //create SPAN
+const textlogospan2 = document.createElement("span"); //create SPAN
+
+textlogodiv.setAttribute("id", "TextLOGOdiv");
+textlogospan.setAttribute("id", "textlogo_dsl_big");
+textlogospan2.setAttribute("id", "textlogo_dsl_small");
+
+shortcut.appendChild(textlogospan);
+shortcut.setAttribute("href", "https://www.dsl.sk/");
+shortcut.setAttribute("id", "logoShortcut");
+textlogodiv.appendChild(shortcut);
+textlogodiv.appendChild(breakline);
+textlogodiv.appendChild(textlogospan2);
+
+const textlogo_dsl_big = document.createTextNode("DSL.sk");
+const textlogo_dsl_small = document.createTextNode("Digitálny Svet pod Lupou");
+
+textlogospan.appendChild(textlogo_dsl_big);
+textlogospan2.appendChild(textlogo_dsl_small);
+
+document.getElementById("header").getElementsByTagName("img")[1].parentElement.appendChild(textlogodiv);
+document.getElementById("TextLOGOdiv").style.color=myTxColor;
+document.getElementById("textlogo_dsl_big").style.fontSize="70px";
+document.getElementById("textlogo_dsl_big").style.fontFamily="Arial, Helvetica, sans-serif";
+document.getElementById("textlogo_dsl_big").style.fontWeight="900";
+document.getElementById("textlogo_dsl_big").style.position="relative";
+document.getElementById("textlogo_dsl_small").style.position="relative";
+document.getElementById("textlogo_dsl_big").style.top="-30px";
+document.getElementById("textlogo_dsl_small").style.top="-30px";
+document.getElementById("textlogo_dsl_small").style.fontFamily="Arial, Helvetica, sans-serif";
+document.getElementById("header").getElementsByTagName("img")[0].style.display="none";
+document.getElementById("header").getElementsByTagName("img")[1].style.display="none";
+document.getElementById("logoShortcut").style.textDecoration="none";
+document.getElementById("logoShortcut").style.color=myTxColor;
 
 
 console.log("FIX");
