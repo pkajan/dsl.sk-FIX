@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSL.SK fixer
 // @namespace    pk-ap
-// @version      1.1.0
+// @version      1.1.1
 // @description  bigger font
 // @author       PK
 // @match        http://www.dsl.sk/*
@@ -112,11 +112,18 @@ if (window.location.href.match(/article.php\?/)) {
     }
     document.getElementById("bg").getElementsByTagName("tbody")[9].getElementsByTagName("img")[0].style.filter="invert(1)";
 
+    /* comment section */
     if(document.getElementsByTagName("table")[13]){
         for (i = 0; i < document.getElementsByTagName("table")[13].getElementsByTagName("td").length; i++) {
             document.getElementsByTagName("table")[13].getElementsByTagName("td")[i].style.fontSize=moarPIXELZ_discus;
         }
     }
+    if(document.getElementsByTagName("table")[12]){
+        for (i = 0; i < document.getElementsByTagName("table")[12].getElementsByTagName("td").length; i++) {
+            document.getElementsByTagName("table")[12].getElementsByTagName("td")[i].style.fontSize=moarPIXELZ_discus;
+        }
+    }
+
 }
 
 /* whole page */
