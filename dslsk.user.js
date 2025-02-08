@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSL.SK fixer
 // @namespace    pk-ap
-// @version      1.1.1
+// @version      1.1.2
 // @description  bigger font
 // @author       PK
 // @match        http://www.dsl.sk/*
@@ -24,7 +24,17 @@ var myTxColor2 = "#BBDDEE";
 var myTxColorLink = "#f4a460";
 var myBorderColor = "1px solid #FFFFFF"
 var logoImage = "invert(0.83) hue-rotate(180deg)";
+var faviconURL = "https://img.icons8.com/3d-fluency/94/globe.png";
 var i;
+
+function addFavicon(url) {
+    let link = document.createElement("link");
+    link.rel = "icon";
+    link.type = "image/png"; // Change to "image/x-icon" for .ico files
+    link.href = url;
+    document.head.appendChild(link);
+}
+
 
 if (location.protocol !== 'https:') {
     location.replace(`https:${location.href.substring(location.protocol.length)}`);
@@ -209,5 +219,6 @@ document.getElementById("header").getElementsByTagName("img")[1].style.display="
 document.getElementById("logoShortcut").style.textDecoration="none";
 document.getElementById("logoShortcut").style.color=myTxColor;
 
+addFavicon(faviconURL);
 
 console.log("FIX");
