@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSL.SK fixer
 // @namespace    pk-ap
-// @version      1.1.2
+// @version      1.1.3
 // @description  bigger font
 // @author       PK
 // @match        http://www.dsl.sk/*
@@ -133,7 +133,9 @@ if (window.location.href.match(/article.php\?/)) {
             document.getElementsByTagName("table")[12].getElementsByTagName("td")[i].style.fontSize=moarPIXELZ_discus;
         }
     }
-
+    document.querySelectorAll('td[bgcolor="#ffffff"]').forEach(cell => {
+        cell.style.backgroundColor = myBgColor;
+    });
 }
 
 /* whole page */
